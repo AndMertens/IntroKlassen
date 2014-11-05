@@ -11,10 +11,10 @@ import java.util.Date;
  *
  * @author Andy.mertens
  */
-public class Rekening {
+abstract class Rekening {
     
     protected String rekeningNummer;
-    private double saldo;
+    protected double saldo;
         
     protected Rekening(String rekeningNr){
         rekeningNummer = rekeningNr;
@@ -41,10 +41,8 @@ public class Rekening {
             System.out.println("Saldo ontoereikend : " + geefSaldo());
     }
     
-    protected double geefSaldo(){
-        return saldo;
-    }
-    
+    abstract double geefSaldo();
+        
     @Override public String toString(){
         return (rekeningNummer + " , " + saldo);
     }

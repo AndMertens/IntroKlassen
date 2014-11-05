@@ -25,11 +25,11 @@ public class SpaarRekening extends Rekening implements Cloneable  {
     
     @Override public double geefSaldo(){
         super.Storten(berekenRente());
-        return super.geefSaldo(); 
+        return saldo; 
     }
       
    private double berekenRente(){
-       return super.geefSaldo() * interest/100;
+       return saldo * interest/100;
    }
    
    @Override public String toString(){

@@ -26,13 +26,16 @@ public class ZichtRekening extends Rekening {
     }
      
     @Override public void Afhalen(double Bedrag){
-        double testSaldo= geefSaldo() - Bedrag + maxKrediet;
-        if(testSaldo>0)
-            super.Afhalen(Bedrag);
+        double testSaldo = saldo - Bedrag + maxKrediet;
+        if(testSaldo>0) saldo-=Bedrag;
     }
     
      @Override public String toString(){
          return ("Zichtrekening - " + super.toString());
     }
+     
+     @Override public double geefSaldo(){
+         return (saldo-=0.05D);
+     }
     
 }
